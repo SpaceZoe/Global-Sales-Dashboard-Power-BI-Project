@@ -10,27 +10,27 @@ This project demonstrates a professional approach to **Data Engineering** and **
 
 ### 1. 🛒 Executive Sales Dashboard
 *A high-level overview for stakeholders, featuring dynamic slicers and KPI cards.*
-![Sales Dashboard]
+![Sales Dashboard](Sales Dashboard.png)
 * **Key Features:** Interactive Slicers (Year, Country, Product), KPI Cards with millions/thousands formatting, and cross-filtering visuals.
 
 ### 2. 💸 Discount Analysis & Detail Table
 *Granular view of product performance, highlighting discount impact on sales.*
-![Discount Details]
+![Discount Details](Discount Details.png)
 * **Key Features:** Conditional Formatting on data bars, calculated columns for Discount Rate, and tabular breakdown for deep dives.
 
 ### 3. ⏱️ Advanced Time Intelligence
 *Complex DAX implementation for trend analysis and period-over-period comparison.*
-![Time Intelligence]
+![Time Intelligence](Time Intelligence.png)
 * **Key Features:** `TOTALYTD`, `SAMEPERIODLASTYEAR`, and custom `Month Slicer` logic to analyze Sales trends over time.
 
 ### 4. 📊 Advanced Tooltips (Contextual Insights)
 *Hover-over capabilities to show detailed breakdowns without cluttering the main dashboard.*
-![ASP Tooltip]
+![Tooltip] (Tooltip.png)
 * **Key Features:** Visual Tooltip showcasing ASP distribution by Product Category.
 
 ### 5. ℹ️ Documentation & Definitions
 *Built-in documentation page to ensure data governance and user understanding.*
-![Info Page]
+![Info Page](Info Page.png)
 * **Key Features:** Clear definitions of metrics (ASP, Discount Rate) and data lineage info.
 
 ---
