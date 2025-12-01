@@ -25,7 +25,7 @@ This project demonstrates a professional approach to **Data Engineering** and **
 
 ### 4. 📊 Advanced Tooltips (Contextual Insights)
 *Hover-over capabilities to show detailed breakdowns without cluttering the main dashboard.*
-![Tooltip] (images/Tooltip.png)
+![Tooltip](images/A_Tooltip.png)
 * **Key Features:** Visual Tooltip showcasing ASP distribution by Product Category.
 
 ### 5. ℹ️ Documentation & Definitions
