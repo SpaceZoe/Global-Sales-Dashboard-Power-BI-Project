@@ -1,87 +1,82 @@
-# 🛍️ Global Sales Dashboard — Power BI Project
+# 🌍 Global Sales Dashboard - Power BI Project
 
-## 📌 Overview
+> **An interactive, end-to-end BI solution designed for analyzing global e-commerce performance.**
 
-This Power BI project presents a comprehensive **interactive dashboard** for analyzing global e-commerce sales data. It allows users to explore sales performance across various **countries**, **cities**, **products**, and **time dimensions**, offering rich insights for both strategic and operational decisions.
-
-Designed with advanced Power BI features, this dashboard showcases a professional-level approach to **data storytelling**, **visual structure**, and **analytical depth**.
+This project demonstrates a professional approach to **Data Engineering** and **Visualization** within Power BI. Starting from raw Excel data, I engineered a robust **Star Schema** data model and implemented advanced **DAX calculations** to deliver actionable insights on Sales, Units, and Average Selling Price (ASP) across multiple dimensions.
 
 ---
 
-## ✨ Highlights & Advanced Features
+## 📸 Dashboard Preview
 
-| Feature | Description |
-|--------|-------------|
-| **Navigation Page** | User-friendly landing page using **buttons** and **bookmarks** for smooth report navigation |
-| **Bookmark Layering** | Overlay visuals within a single page using dynamic **bookmark states** to toggle content |
-| **Sales Dashboard** | Interactive KPIs including **Total Sales**, **Total Units**, and **ASP**, segmented by **time**, **region**, and **product** |
-| **Time Intelligence** | Implements year-over-year growth (YoY%), month-to-date (MTD), last month, and cumulative sales (YTD, LY) using **DAX** |
-| **Dynamic Measures** | Switch between key metrics using slicers or buttons for customized insights |
-| **Role-Playing Dimensions** | Uses multiple date relationships to support different time-based analysis perspectives |
-| **Discount Analysis** | Displays discount rates, list prices, and contribution per product to optimize pricing strategy |
-| **Info Page** | Definitions of KPIs and business logic |
-| **Advanced Tooltip** | Embedded visual tooltips for contextual insights without cluttering the main view |
+### 1. 🛒 Executive Sales Dashboard
+*A high-level overview for stakeholders, featuring dynamic slicers and KPI cards.*
+![Sales Dashboard]
+* **Key Features:** Interactive Slicers (Year, Country, Product), KPI Cards with millions/thousands formatting, and cross-filtering visuals.
+
+### 2. 💸 Discount Analysis & Detail Table
+*Granular view of product performance, highlighting discount impact on sales.*
+![Discount Details]
+* **Key Features:** Conditional Formatting on data bars, calculated columns for Discount Rate, and tabular breakdown for deep dives.
+
+### 3. ⏱️ Advanced Time Intelligence
+*Complex DAX implementation for trend analysis and period-over-period comparison.*
+![Time Intelligence]
+* **Key Features:** `TOTALYTD`, `SAMEPERIODLASTYEAR`, and custom `Month Slicer` logic to analyze Sales trends over time.
+
+### 4. 📊 Advanced Tooltips (Contextual Insights)
+*Hover-over capabilities to show detailed breakdowns without cluttering the main dashboard.*
+![ASP Tooltip]
+* **Key Features:** Visual Tooltip showcasing ASP distribution by Product Category.
+
+### 5. ℹ️ Documentation & Definitions
+*Built-in documentation page to ensure data governance and user understanding.*
+![Info Page]
+* **Key Features:** Clear definitions of metrics (ASP, Discount Rate) and data lineage info.
 
 ---
 
-## 🧩 Data Source
+## ✨ Key Technical Highlights
 
-- Simulated dataset in **Excel**
+This project goes beyond basic visualization by implementing advanced **BI Engineering** practices:
+
+| Feature | Engineering & Technical Implementation |
+| :--- | :--- |
+| **Data Modeling** | Designed a **Star Schema** with Fact Tables (Sales) and Dimension Tables (Date, Product, Geography) to optimize query performance. |
+| **Advanced DAX** | Created complex measures for **Time Intelligence** (YoY%, YTD, MTD) and **Dynamic KPIs** that switch based on user selection. |
+| **UX/UI Design** | Implemented **Page Navigation** (Buttons & Bookmarks) and **Visual Layering** to create an app-like user experience. |
+| **Performance** | Optimized visual interactions and reduced data model size by removing unnecessary columns and using proper data types. |
 
 ---
 
-### 🧠 DAX Formulas & Data Modeling
+## 🧠 Business Logic & DAX Formulas
 
-The original dataset included only basic attributes such as `Quantity`, `Sales Amount`, and `List Price`. All business-critical metrics were created using **DAX**, including:
+The original dataset contained only raw transactional attributes. All business-critical metrics were engineered using **DAX**:
 
-- `Total Sales = Quantity * List Price`
-- `Discount Rate = 1 - Sales Amount / Total Sales`
-- `ASP (Average Selling Price) = Sales Amount / Quantity`
-- `YoY%`, `YTD`, `MTD` using time intelligence functions
-- Dynamic Measures for switching between KPIs with slicers
+* **Total Sales** = `SUMX(Sales, Sales[Quantity] * Sales[List Price])`
+* **Discount Rate** = `DIVIDE(TotalSalesByListPrice - TotalSales, TotalSalesByListPrice, 0)`
+* **ASP (Average Selling Price)** = `DIVIDE([Total Sales], [Total Units])`
+* **YoY Growth %** = `DIVIDE([Total Sales] - [Sales LY], [Sales LY])`
 
-This showcases my ability to not just visualize data but to **build robust data models** and derive **actionable business insights** using Power BI.
+*Note: Used `DIVIDE` function for safe division to handle potential zero denominators.*
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Power BI Desktop  
-- DAX (Data Analysis Expressions)  
-- Excel (for data modeling)
+* **Tool:** Microsoft Power BI Desktop
+* **Language:** DAX (Data Analysis Expressions)
+* **Data Source:** Simulated Sales Data (Excel)
+* **Techniques:** Data Modeling, ETL (Power Query), Data Visualization, Storytelling
 
 ---
 
-## 📸 Preview
+## 📌 Next Steps (Engineering Roadmap)
 
-### 📊 Navigation Page
-![Navigation Page](images/navigation.png)
+* [ ] **Automation:** Integrate with **Power Automate** to trigger alerts when Sales drop below a threshold.
+* [ ] **Scalability:** Migrate the backend from Excel to **Azure SQL Database** or **Databricks** for handling larger datasets.
 
-### 🛒 Sales Dashboard
-![Sales Dashboard](images/dashboard.png)
-
-### 💸 Discount Details
-![Discount Page](images/discount.png)
-
-### ⏱️ Time Intelligence
-![Time Intelligence](images/time-intelligence.png)
 
 ---
 
-## 📍 Key Learnings
-
-This project helped me reinforce the best practices of:
-- Building a **narrative-driven report** using visual hierarchy
-- Applying **time intelligence functions** with business relevance
-- Creating **reusable bookmarks** and **dynamic pages** for efficiency
-- Designing dashboards that balance clarity and analytical depth
-
----
-
-## 📌 Next Steps
-
-- Add **Power Automate** integration for anomaly detection alerts  
-- Extend data source with **real-world APIs** or **SQL databases**  
-
-
-
+*Author: Zoe Xia*
+*[LinkedIn Profile](https://www.linkedin.com/in/zoe-xia-4b6307132/) | [GitHub Portfolio](https://github.com/SpaceZoe)*
